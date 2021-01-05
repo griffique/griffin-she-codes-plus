@@ -1,0 +1,68 @@
+body {
+  background-image: linear-gradient(to top, #caf0f8 0%, white 100%);
+  height: 100%;
+  margin: 0;
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  font-family: "Cabin";
+}
+h1 {
+  padding: 20px 0 0 0;
+  color: #03045e;
+}
+h2 {
+  color: #90e0ef;
+  font-style: italic;
+}
+
+h5 {
+  color: #03045e;
+}
+h6 {
+  color: #90e0ef;
+}
+a:link {
+  text-decoration: none;
+}
+a:visited {
+  color: #adb5bd;
+}
+a:hover {
+  color: #03045e;
+}
+
+p {
+  padding: 10px;
+}
+.temp-rain {
+  text-align: right;
+
+  color: #03045e;
+}
+.converted-temp {
+  font-weight: lighter;
+  color: #90e0ef;
+}
+.card {
+  border: 1px solid #caf0f8;
+}
+.card:hover {
+  background: #f8fdfe;
+}
+.weather-days {
+  text-align: center;
+}
+.weather-icon {
+  font-size: 40px;
+  color: #adb5bd;
+}
+.search-bar {
+  margin: 25px 0;
+  display: block;
+  padding: 0;
+  color: #03045e;
+}
+
+#locate-me-button {
+  margin: 24px 0 0 0;
+}
