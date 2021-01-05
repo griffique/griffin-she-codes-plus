@@ -67,6 +67,9 @@ p {
   margin: 24px 0 0 0;
 }
 #coded-by {
+  position: fixed;
+  left: 0;
+  bottom: 10px;
+  width: 100%;
   text-align: center;
-  margin: 200px;
 }
