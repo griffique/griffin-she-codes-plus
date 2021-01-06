@@ -46,9 +46,7 @@ p {
   font-weight: lighter;
   color: #90e0ef;
 }
-.card {
-  border: 1px solid #caf0f8;
-}
+
 .card:hover {
   background: #f8fdfe;
 }
