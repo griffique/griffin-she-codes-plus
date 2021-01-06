@@ -68,12 +68,15 @@ p {
   font-weight: lighter;
   color: #90e0ef;
 }
+.card {
+  background: rgba(255, 255, 255, 0.5);
+}
 
 .card:hover {
   background: #f8fdfe;
 }
 .night .card:hover {
-  background: #bfccd5;
+  background: #dbd9e3;
 }
 .weather-days {
   text-align: center;
