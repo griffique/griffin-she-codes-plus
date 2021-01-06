@@ -71,6 +71,9 @@ p {
   position: relative;
   top: -2px;
 }
+.btn-light:hover {
+  background: #e1e6ea;
+}
 
 #locate-me-button {
   text-align: right;
