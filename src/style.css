@@ -65,6 +65,9 @@ p {
   padding: 0;
   color: #03045e;
 }
+#city-input {
+  width: 60%;
+}
 
 #locate-me-button {
   margin: 24px 0 0 0;
