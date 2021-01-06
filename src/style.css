@@ -36,6 +36,7 @@ p {
 }
 .container {
   max-width: 975px;
+  margin: 50px auto auto;
 }
 .temp-rain {
   text-align: right;
@@ -59,16 +60,21 @@ p {
 }
 .search-bar {
   margin: 25px 0;
-  display: block;
   padding: 0;
   color: #03045e;
 }
 #city-input {
-  width: 60%;
+  width: 80%;
+}
+
+#submit-button {
+  position: relative;
+  top: -2px;
 }
 
 #locate-me-button {
-  margin: 24px 0 0 0;
+  text-align: right;
+  margin: 25px 0 0 0;
 }
 #coded-by {
   position: fixed;

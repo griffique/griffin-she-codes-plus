@@ -11,8 +11,11 @@
       integrity="sha384-giJF6kkoqNQ00vy+HMDP7azOuL0xtbfIcaT9wjKHr8RbDVddVHyTfAAsrekwKmP1"
       crossorigin="anonymous"
     />
-    <link rel="preconnect" href="https://fonts.gstatic.com">
-<link href="https://fonts.googleapis.com/css2?family=Cabin:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500;1,600;1,700&display=swap" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.gstatic.com" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Cabin:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500;1,600;1,700&display=swap"
+      rel="stylesheet"
+    />
     <script
       src="https://kit.fontawesome.com/d0d598d448.js"
       crossorigin="anonymous"
@@ -25,15 +28,18 @@
       <div class="row location-data">
         <div class="col-6 location-time">
           <h1><span id="city-name"></span></h1>
-          <h2> <span id="current-time"> </span></h2>
+          <h2><span id="current-time"> </span></h2>
         </div>
         <div class="col-6 temp-rain">
-          <h1>🌞
-            <span id="temp-display"></span>° <a id="cels-convert" href="#"> C/ </a>
-            <span class="converted-temp"> <a id="fahr-convert" href="#">F</a> </span>
+          <h1>
+            🌞 <span id="temp-display"></span>°
+            <a id="cels-convert" href="#"> C/ </a>
+            <span class="converted-temp">
+              <a id="fahr-convert" href="#">F</a>
+            </span>
           </h1>
 
-          <h2> <span id="conditions"></span></h2>
+          <h2><span id="conditions"></span></h2>
         </div>
       </div>
       <div class="row weather-days">
@@ -80,23 +86,46 @@
           </div>
         </div>
       </div>
-      <div class="row">
-     <div class="col-6">
-        <form class="search-bar form-control-lg" id="city-search">
-        
-            <input type="search" id="city-input" placeholder="enter city name"/>
-         
-         <input type="submit" id="submit-button" value="Search" />
-        </form>
+      <div class="row" id="search-area">
+        <div class="col-9" id="search-form">
+          <form class="search-bar form-control-lg" id="city-search">
+            <input
+              type="search"
+              id="city-input"
+              placeholder="Enter a city name..."
+            />
+
+            <input
+              type="submit"
+              class="btn btn-secondary"
+              id="submit-button"
+              value="🔎 Search"
+            />
+          </form>
         </div>
-        <div class="col-3">
-        <button type="button" id="locate-me-button" class="btn btn-secondary">Find My Location</button>
+
+        <div class="col-3" id="locate-me-button">
+          <button type="button" class="btn btn-secondary">
+            📍 Find My Location
+          </button>
+        </div>
       </div>
-      </div>
-      <script src=src/index.js>
-      
-    </script>
-    <footer  id="coded-by"> <a href="https://github.com/griffique/griffin-she-codes-plus" target="_blank"> Open Source Code</a> by <a href= "https://www.linkedin.com/in/quinn-griffin-9955711b8/" target="_blank">Quinn Griffin</a> 🐱‍🚀</footer>
+      <footer id="coded-by">
+        <a
+          href="https://github.com/griffique/griffin-she-codes-plus"
+          target="_blank"
+        >
+          Open Source Code</a
+        >
+        by
+        <a
+          href="https://www.linkedin.com/in/quinn-griffin-9955711b8/"
+          target="_blank"
+          >Quinn Griffin</a
+        >
+        🐱‍🚀
+      </footer>
+    </div>
+    <script src="src/index.js"></script>
   </body>
-  
 </html>
