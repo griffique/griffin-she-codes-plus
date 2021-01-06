@@ -2,12 +2,11 @@ function change_background() {
   let day = new Date();
   let now = day.getHours();
   console.log(now);
-  if (now == 23 || now < 7) {
+  if (now > 19 || now < 7) {
     document.body.className = "night";
   } else {
     document.body.className = "day";
   }
-  console.log("test");
 }
 
 change_background();

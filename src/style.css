@@ -4,10 +4,9 @@
   background-repeat: no-repeat;
   background-attachment: fixed;
   height: 100%;
-  color: white;
 }
 .night {
-  background-image: linear-gradient(to top, #90e0ef 0%, #fff 100%);
+  background-image: linear-gradient(-20deg, #2b5876 0%, #4e4376 100%);
   background-repeat: no-repeat;
   background-attachment: fixed;
   height: 100%;
@@ -20,18 +19,29 @@ body {
 }
 h1 {
   padding: 20px 0 0 0;
+}
+
+.day h1 {
   color: #03045e;
 }
+.night h1 {
+  color: white;
+}
 h2 {
-  color: #90e0ef;
   font-style: italic;
   font-weight: lighter;
 }
-
-h5 {
+.day h2 {
+  color: #90e0ef;
+}
+.night h2 {
+  color: white;
+}
+.day h5 {
   color: #03045e;
 }
-h6 {
+
+.day h6 {
   color: #90e0ef;
 }
 a:link {
@@ -53,8 +63,6 @@ p {
 }
 .temp-rain {
   text-align: right;
-
-  color: #03045e;
 }
 .converted-temp {
   font-weight: lighter;
@@ -63,6 +71,9 @@ p {
 
 .card:hover {
   background: #f8fdfe;
+}
+.night .card:hover {
+  background: #bfccd5;
 }
 .weather-days {
   text-align: center;
@@ -98,6 +109,9 @@ p {
   bottom: 10px;
   width: 100%;
   text-align: center;
+}
+.night #coded-by {
+  color: white;
 }
 #updates {
   font-size: 12px;
