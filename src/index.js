@@ -2,10 +2,12 @@ function change_background() {
   let day = new Date();
   let now = day.getHours();
   console.log(now);
-  if (now > 19 || now < 7) {
-    document.body.className = "night";
-  } else {
+  if (now > 5 && now < 12) {
+    document.body.className = "morning";
+  } else if (now > 12 && now < 19) {
     document.body.className = "day";
+  } else {
+    document.body.className = "night";
   }
 }
 

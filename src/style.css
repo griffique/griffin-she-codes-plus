@@ -1,3 +1,9 @@
+.morning {
+  background-image: linear-gradient(to top, #fddb92 0%, #d1fdff 100%);
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  height: 100%;
+}
 .day {
   background-image: linear-gradient(to top, #caf0f8 0%, white 100%);
 
