@@ -1,7 +1,7 @@
 function change_background() {
   let day = new Date();
   let now = day.getHours();
-  console.log(now);
+
   if (now > 5 && now < 12) {
     document.body.className = "morning";
   } else if (now > 12 && now < 18) {
@@ -67,6 +67,7 @@ function showPosition(position) {
   let apiKey = `483e555d11f508a7308255583271cc91`;
   let units = `metric`;
   let apiUrl = `https://api.openweathermap.org/data/2.5/weather?lat=${lat}&lon=${lon}&appid=${apiKey}&units=${units}`;
+  console.log(apiUrl);
   axios.get(apiUrl).then(showTemp);
 }
 function showTemp(response) {
@@ -80,6 +81,10 @@ function showTemp(response) {
   let conditionDisplay = document.querySelector(`#conditions`);
   console.log(response);
   conditionDisplay.innerHTML = response.data.weather[0].description;
+  let currentTime = new Date(response.data.dt * 1000);
+
+  let currentTimeDisplay = document.querySelector("#current-time");
+  currentTimeDisplay.innerHTML = `${currentTime};`;
 }
 
 let locateMeButton = document.querySelector(`#locate-me-button`);
