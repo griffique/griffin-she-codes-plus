@@ -71,10 +71,15 @@ a:hover {
 p {
   padding: 10px;
 }
+.temp-rain {
+  position: relative;
+  top: -25px;
+}
 .container {
   max-width: 975px;
   margin: 50px auto auto;
 }
+
 .temp-rain {
   text-align: right;
 }
