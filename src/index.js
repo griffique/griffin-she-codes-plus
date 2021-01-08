@@ -80,6 +80,12 @@ function showTemp(response) {
   let currentTimeDisplay = document.querySelector("#current-time");
   let formattedTime = formatDate(currentTime);
   currentTimeDisplay.innerHTML = `Last updated ${formattedTime}`;
+  let iconDisplay = document.querySelector("#icon-element");
+  iconDisplay.setAttribute(
+    "src",
+    `http://openweathermap.org/img/wn/${response.data.weather[0].icon}@2x.png`
+  );
+  iconElement.setAttribute("alt", response.data.weather[0].description);
 }
 
 let locateMeButton = document.querySelector(`#locate-me-button`);
