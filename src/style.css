@@ -100,6 +100,8 @@ p {
 }
 .card {
   background: rgba(255, 255, 255, 0.5);
+  position: relative;
+  top: -50px;
 }
 
 .card:hover {
@@ -119,6 +121,10 @@ p {
   margin: 25px 0;
   padding: 0;
   color: #03045e;
+}
+#search-area {
+  position: relative;
+  top: -50px;
 }
 #city-input {
   width: 80%;
