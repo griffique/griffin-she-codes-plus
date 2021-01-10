@@ -5,9 +5,7 @@ function change_background() {
   if (now > 5 && now < 12) {
     document.body.className = "morning";
   } else if (now > 12 && now < 18) {
-    document.body.className = "day";
-  } else if (now > 18 && now < 22) {
-    document.body.className = "evening";
+    document.body.className = "morning";
   } else {
     document.body.className = "night";
   }

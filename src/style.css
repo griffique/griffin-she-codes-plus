@@ -1,22 +1,18 @@
 .morning {
-  background-image: linear-gradient(to top, #fddb92 0%, #d1fdff 100%);
+  background-image: linear-gradient(to right, #ffecd2 0%, #fcb69f 100%);
   background-repeat: no-repeat;
   background-attachment: fixed;
   height: 100%;
+  color: #000;
 }
 .day {
-  background-image: linear-gradient(to top, #caf0f8 0%, white 100%);
+  background-image: linear-gradient(to top, #90e0ef 0%, #fff 100%);
 
   background-repeat: no-repeat;
   background-attachment: fixed;
   height: 100%;
 }
-.evening {
-  background-image: linear-gradient(to top, #30cfd0 0%, #330867 100%);
-  background-repeat: no-repeat;
-  background-attachment: fixed;
-  height: 100%;
-}
+
 .night {
   background-image: linear-gradient(-20deg, #2b5876 0%, #4e4376 100%);
   background-repeat: no-repeat;
@@ -36,8 +32,7 @@ h1 {
 .day h1 {
   color: #03045e;
 }
-.night,
-.evening h1 {
+.night h1 {
   color: white;
 }
 h2 {
@@ -49,8 +44,7 @@ h2 {
   color: #90e0ef;
   font-size: 24px;
 }
-.night,
-.evening h2 {
+.night h2 {
   color: white;
   font-size: 24px;
 }
@@ -64,7 +58,7 @@ h5 {
 }
 
 .day h6 {
-  color: #90e0ef;
+  color: #00b4d8;
 }
 #conditions {
   position: relative;
@@ -105,6 +99,11 @@ p {
   cursor: default;
 }
 
+.night .temp-rain .active {
+  color: #fff;
+  cursor: default;
+}
+
 .temp-rain .active:hover {
   text-decoration: none;
 }
@@ -115,12 +114,11 @@ p {
 .card {
   position: relative;
   top: -50px;
+  background-color: rgba(255, 255, 255, 0.3);
 }
-.day .card {
-  background: rgba(255, 255, 255, 0.99);
-}
+
 .card:hover {
-  background: rgba(255, 255, 255, 0.8);
+  background: rgba(255, 255, 255, 0.5);
 }
 
 #hourly-forecast-display {
