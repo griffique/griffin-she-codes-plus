@@ -45,7 +45,18 @@ function search(city) {
   apiUrl = `https://api.openweathermap.org/data/2.5/forecast?q=${city}&appid=${apiKey}&units=${units}`;
   axios.get(apiUrl).then(displayForecast);
 }
-function displayForecast(event) {}
+function displayForecast(response) {
+  let forecastTempDisplay = document.querySelector("#forecast-temp");
+  let forecastTemp = Math.round(response.data.list[0].main.temp);
+  forecastTempDisplay.innerHTML = `${forecastTemp}°`;
+  let conditionIconId = response.data.list[0].weather[0].icon;
+  let conditionIconUrl = `https://openweathermap.org/img/wn/${conditionIconId}@2x.png`;
+  let forecastIcon = document.querySelector("#condition-icon");
+  forecastIcon.setAttribute("src", conditionIconUrl);
+  let forecastTime = new Date(response.data.list[0].dt * 1000);
+  let forecastTimeDisplay = document.querySelector("#forecast-time");
+  forecastTimeDisplay.innerHTML = formatDate(forecastTime);
+}
 function handleSubmit(event) {
   event.preventDefault();
   let searchInput = document.querySelector("#city-input");
@@ -78,7 +89,7 @@ function showTemp(response) {
   let currentCityDisplay = document.querySelector(`#city-name`);
   currentCityDisplay.innerHTML = `${currentCity}, ${currentCountry}`;
   let conditionDisplay = document.querySelector(`#conditions`);
-  console.log(response);
+
   conditionDisplay.innerHTML = response.data.weather[0].description;
   let currentTime = new Date(response.data.dt * 1000);
   let currentTimeDisplay = document.querySelector("#current-time");
