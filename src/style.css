@@ -159,7 +159,7 @@ p {
   background: rgba(255, 255, 255, 0.9);
 }
 .night #coded-by {
-  color: white;
+  color: #000;
 }
 #updates {
   font-size: 12px;
