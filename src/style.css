@@ -108,24 +108,19 @@ p {
   color: #90e0ef;
 }
 .card {
-  background: rgba(255, 255, 255, 0.5);
+  background: rgba(255, 255, 255, 0.8);
   position: relative;
   top: -50px;
 }
 
 .card:hover {
-  background: #f8fdfe;
+  border: 2px solid #adb5bd;
 }
-.night .card:hover {
-  background: #dbd9e3;
-}
+
 .weather-days {
   text-align: center;
 }
-.weather-icon {
-  font-size: 40px;
-  color: #adb5bd;
-}
+
 .search-bar {
   margin: 25px 0;
   padding: 0;
