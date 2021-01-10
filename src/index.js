@@ -46,17 +46,29 @@ function search(city) {
   axios.get(apiUrl).then(displayForecast);
 }
 function displayForecast(response) {
-  let forecastTempDisplay = document.querySelector("#forecast-temp");
-  let forecastTemp = Math.round(response.data.list[0].main.temp);
-  forecastTempDisplay.innerHTML = `${forecastTemp}°`;
-  let conditionIconId = response.data.list[0].weather[0].icon;
-  let conditionIconUrl = `https://openweathermap.org/img/wn/${conditionIconId}@2x.png`;
-  let forecastIcon = document.querySelector("#condition-icon");
-  forecastIcon.setAttribute("src", conditionIconUrl);
-  let forecastTime = new Date(response.data.list[0].dt * 1000);
-  let forecastTimeDisplay = document.querySelector("#forecast-time");
-  forecastTimeDisplay.innerHTML = formatDate(forecastTime);
+  let forecast = null;
+  forecast = response.data.list[0];
+  let forecastDisplay = document.querySelector("#hourly-forecast-display");
+
+  forecastDisplay.innerHTML = ` <div class="card col-sm-2"><h5>${formatDate(
+    forecast.dt * 1000
+  )}</h5> <img src="https://openweathermap.org/img/wn/${
+    forecast.weather[0].icon
+  }@2x.png" alt=${forecast.description}/><h6>${Math.round(
+    forecast.main.temp
+  )}°</h6></div>`;
+  forecast = response.data.list[1];
+  forecastDisplay.innerHTML =
+    forecastDisplay.innerHTML +
+    ` <div class="card col-sm-2"><h5>${formatDate(
+      forecast.dt * 1000
+    )}</h5> <img src="https://openweathermap.org/img/wn/${
+      forecast.weather[0].icon
+    }@2x.png" alt=${forecast.description}/><h6>${Math.round(
+      forecast.main.temp
+    )}°</h6></div>`;
 }
+
 function handleSubmit(event) {
   event.preventDefault();
   let searchInput = document.querySelector("#city-input");

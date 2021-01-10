@@ -54,6 +54,10 @@ h2 {
   color: white;
   font-size: 24px;
 }
+h5 {
+  font-size: 18px;
+  margin: 10px 0 0 0;
+}
 .day h5 {
   color: #03045e;
 }
@@ -117,7 +121,7 @@ p {
   border: 2px solid #adb5bd;
 }
 
-.weather-days {
+#hourly-forecast-display {
   text-align: center;
 }
 
