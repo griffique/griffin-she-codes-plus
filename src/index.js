@@ -42,7 +42,10 @@ function search(city) {
   let units = `metric`;
   let apiUrl = `https://api.openweathermap.org/data/2.5/weather?q=${city}&appid=${apiKey}&units=${units}`;
   axios.get(apiUrl).then(showTemp);
+  apiUrl = `https://api.openweathermap.org/data/2.5/forecast?q=${city}&appid=${apiKey}&units=${units}`;
+  axios.get(apiUrl).then(displayForecast);
 }
+function displayForecast(event) {}
 function handleSubmit(event) {
   event.preventDefault();
   let searchInput = document.querySelector("#city-input");
