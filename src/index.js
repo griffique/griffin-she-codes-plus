@@ -67,6 +67,7 @@ function showPosition(position) {
 }
 function showTemp(response) {
   let currentTemp = Math.round(response.data.main.temp);
+  celsiusTemperature = Math.round(response.data.main.temp);
   let tempDisplay = document.querySelector(`#temp-display`);
   tempDisplay.innerHTML = `${currentTemp}`;
   let currentCity = response.data.name;
@@ -91,3 +92,24 @@ function showTemp(response) {
 let locateMeButton = document.querySelector(`#locate-me-button`);
 locateMeButton.addEventListener("click", findLocation);
 search("Vernazza");
+
+function displayFahrenheitTemp(event) {
+  let tempDisplay = document.querySelector("#temp-display");
+  let fahrenheitTemperature = (celsiusTemperature * 9) / 5 + 32;
+
+  tempDisplay.innerHTML = Math.round(fahrenheitTemperature);
+  celsiusConvert.classList.remove("active");
+  fahrenheitConvert.classList.add("active");
+}
+function displayCelsiusTemp(event) {
+  let tempDisplay = document.querySelector("#temp-display");
+
+  tempDisplay.innerHTML = Math.round(celsiusTemperature);
+  celsiusConvert.classList.add("active");
+  fahrenheitConvert.classList.remove("active");
+}
+let celsiusTemperature = null;
+let celsiusConvert = document.querySelector("#cels-convert");
+celsiusConvert.addEventListener("click", displayCelsiusTemp);
+let fahrenheitConvert = document.querySelector("#fahr-convert");
+fahrenheitConvert.addEventListener("click", displayFahrenheitTemp);

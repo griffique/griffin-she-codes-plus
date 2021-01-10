@@ -94,6 +94,14 @@ p {
 .temp-rain {
   text-align: right;
 }
+.temp-rain .active {
+  color: rgb(33, 33, 33);
+  cursor: default;
+}
+
+.temp-rain .active:hover {
+  text-decoration: none;
+}
 .converted-temp {
   font-weight: lighter;
   color: #90e0ef;
