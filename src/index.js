@@ -95,6 +95,8 @@ function showTemp(response) {
   let conditionDisplay = document.querySelector(`#conditions`);
 
   conditionDisplay.innerHTML = response.data.weather[0].description;
+  let windDisplay = document.querySelector("#wind-speed");
+  windDisplay.innerHTML = Math.round(response.data.wind.speed);
   let currentTime = new Date(response.data.dt * 1000);
   let currentTimeDisplay = document.querySelector("#current-time");
   let formattedTime = formatDate(currentTime);

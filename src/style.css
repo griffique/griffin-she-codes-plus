@@ -60,10 +60,7 @@ h5 {
 .day h6 {
   color: #00b4d8;
 }
-#conditions {
-  position: relative;
-  top: -30px;
-}
+
 a:link {
   text-decoration: none;
 }
@@ -129,6 +126,12 @@ p {
   margin: 25px 0;
   padding: 0;
   color: #03045e;
+}
+.wind-conditions h2 {
+  text-align: right;
+  position: relative;
+  top: -25px;
+  font-size: 18px;
 }
 #search-area {
   position: relative;
