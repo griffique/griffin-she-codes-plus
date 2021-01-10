@@ -83,7 +83,8 @@ p {
   top: -25px;
 }
 #cels-convert,
-#fahr-convert {
+#fahr-convert,
+#convert-slash {
   font-size: 16px;
 }
 .container {
