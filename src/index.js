@@ -65,6 +65,38 @@ function displayForecast(response) {
   }@2x.png" alt=${forecast.description}/><h6>${Math.round(
     forecast.main.temp
   )}°</h6></div>`;
+  forecast = response.data.list[2];
+  forecastDisplay.innerHTML += ` <div class="card col-sm-2"><h5>${formatDate(
+    forecast.dt * 1000
+  )}</h5> <img src="https://openweathermap.org/img/wn/${
+    forecast.weather[0].icon
+  }@2x.png" alt=${forecast.description}/><h6>${Math.round(
+    forecast.main.temp
+  )}°</h6></div>`;
+  forecast = response.data.list[3];
+  forecastDisplay.innerHTML += ` <div class="card col-sm-2"><h5>${formatDate(
+    forecast.dt * 1000
+  )}</h5> <img src="https://openweathermap.org/img/wn/${
+    forecast.weather[0].icon
+  }@2x.png" alt=${forecast.description}/><h6>${Math.round(
+    forecast.main.temp
+  )}°</h6></div>`;
+  forecast = response.data.list[4];
+  forecastDisplay.innerHTML += ` <div class="card col-sm-2"><h5>${formatDate(
+    forecast.dt * 1000
+  )}</h5> <img src="https://openweathermap.org/img/wn/${
+    forecast.weather[0].icon
+  }@2x.png" alt=${forecast.description}/><h6>${Math.round(
+    forecast.main.temp
+  )}°</h6></div>`;
+  forecast = response.data.list[5];
+  forecastDisplay.innerHTML += ` <div class="card col-sm-2"><h5>${formatDate(
+    forecast.dt * 1000
+  )}</h5> <img src="https://openweathermap.org/img/wn/${
+    forecast.weather[0].icon
+  }@2x.png" alt=${forecast.description}/><h6>${Math.round(
+    forecast.main.temp
+  )}°</h6></div>`;
 }
 
 function handleSubmit(event) {
