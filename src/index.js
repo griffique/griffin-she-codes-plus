@@ -1,3 +1,4 @@
+//Morning, Day and Night Mode Function
 function change_background() {
   let day = new Date();
   let now = day.getHours();
@@ -12,6 +13,8 @@ function change_background() {
 }
 
 change_background();
+
+//Time formatting function
 function formatDate(timestamp) {
   let now = new Date(timestamp);
   let dayIndex = [
@@ -34,6 +37,7 @@ function formatDate(timestamp) {
   }
   return `${day} ${hour}:${minutes}`;
 }
+//Search functions
 
 function search(city) {
   let apiKey = `483e555d11f508a7308255583271cc91`;
@@ -42,7 +46,36 @@ function search(city) {
   axios.get(apiUrl).then(showTemp);
   apiUrl = `https://api.openweathermap.org/data/2.5/forecast?q=${city}&appid=${apiKey}&units=${units}`;
   axios.get(apiUrl).then(displayForecast);
+
+  function handleSubmit(event) {
+    event.preventDefault();
+    let searchInput = document.querySelector("#city-input");
+    let city = searchInput.value;
+    search(city);
+  }
+
+  let searchForm = document.querySelector(`#city-search`);
+  searchForm.addEventListener("submit", handleSubmit);
 }
+//Locate Me button functions
+function showPosition(position) {
+  let lat = position.coords.latitude;
+  let lon = position.coords.longitude;
+  let apiKey = `483e555d11f508a7308255583271cc91`;
+  let units = `metric`;
+  let apiUrl = `https://api.openweathermap.org/data/2.5/weather?lat=${lat}&lon=${lon}&appid=${apiKey}&units=${units}`;
+  axios.get(apiUrl).then(showTemp);
+  apiUrl = `https://api.openweathermap.org/data/2.5/forecast?lat=${lat}&lon=${lon}&appid=${apiKey}&units=${units}`;
+  axios.get(apiUrl).then(displayForecast);
+}
+function findLocation() {
+  navigator.geolocation.getCurrentPosition(showPosition);
+}
+let locateMeButton = document.querySelector(`#locate-me-button`);
+locateMeButton.addEventListener("click", findLocation);
+search("Vernazza");
+
+//Forecast display functions
 function displayForecast(response) {
   let forecast = null;
   let forecastDisplay = document.querySelector("#hourly-forecast-display");
@@ -59,30 +92,6 @@ function displayForecast(response) {
   }
 }
 
-function handleSubmit(event) {
-  event.preventDefault();
-  let searchInput = document.querySelector("#city-input");
-  let city = searchInput.value;
-  search(city);
-}
-
-let searchForm = document.querySelector(`#city-search`);
-searchForm.addEventListener("submit", handleSubmit);
-//Bonus Point
-function findLocation() {
-  navigator.geolocation.getCurrentPosition(showPosition);
-}
-
-function showPosition(position) {
-  let lat = position.coords.latitude;
-  let lon = position.coords.longitude;
-  let apiKey = `483e555d11f508a7308255583271cc91`;
-  let units = `metric`;
-  let apiUrl = `https://api.openweathermap.org/data/2.5/weather?lat=${lat}&lon=${lon}&appid=${apiKey}&units=${units}`;
-  axios.get(apiUrl).then(showTemp);
-  apiUrl = `https://api.openweathermap.org/data/2.5/forecast?lat=${lat}&lon=${lon}&appid=${apiKey}&units=${units}`;
-  axios.get(apiUrl).then(displayForecast);
-}
 function showTemp(response) {
   let currentTemp = Math.round(response.data.main.temp);
   celsiusTemperature = Math.round(response.data.main.temp);
@@ -109,9 +118,7 @@ function showTemp(response) {
   iconDisplay.setAttribute("alt", response.data.weather[0].description);
 }
 
-let locateMeButton = document.querySelector(`#locate-me-button`);
-locateMeButton.addEventListener("click", findLocation);
-search("Vernazza");
+//Temperature conversion functions
 
 function displayFahrenheitTemp(event) {
   let tempDisplay = document.querySelector("#temp-display");
