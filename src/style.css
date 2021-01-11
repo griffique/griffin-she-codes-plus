@@ -69,9 +69,11 @@ p {
   background-attachment: fixed;
   height: 100%;
 }
-
-.night h2 {
+.night h1,
+h2 {
   color: white;
+}
+.night h2 {
   font-size: 24px;
 }
 .night #coded-by {
