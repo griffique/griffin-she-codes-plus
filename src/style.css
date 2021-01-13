@@ -65,6 +65,16 @@ p {
 .day h6 {
   color: #00b4d8;
 }
+.morning #current-time {
+  color: #000;
+}
+.morning #hourly-forecast-display h4 {
+  color: #000;
+}
+
+.morning .wind-conditions h2 {
+  color: #000;
+}
 
 .night {
   background-image: linear-gradient(-20deg, #2b5876 0%, #4e4376 100%);
@@ -93,6 +103,7 @@ h2 {
 #convert-slash {
   font-size: 16px;
 }
+
 .converted-temp {
   font-weight: lighter;
   color: #90e0ef;
@@ -100,7 +111,7 @@ h2 {
 
 .temp-rain {
   position: relative;
-  top: -30px;
+  top: -25px;
   text-align: right;
 }
 
@@ -135,6 +146,7 @@ h2 {
 #hourly-forecast-display h4 {
   color: #03045e;
 }
+
 /*Search area*/
 
 .btn-light:hover {

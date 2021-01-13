@@ -6,7 +6,7 @@ function change_background() {
   if (now > 5 && now < 12) {
     document.body.className = "morning";
   } else if (now > 12 && now < 18) {
-    document.body.className = "day";
+    document.body.className = "morning";
   } else {
     document.body.className = "night";
   }
@@ -74,24 +74,7 @@ function findLocation() {
 let locateMeButton = document.querySelector(`#locate-me-button`);
 locateMeButton.addEventListener("click", findLocation);
 search("Vernazza");
-
-//Forecast display functions
-function displayForecast(response) {
-  let forecast = null;
-  let forecastDisplay = document.querySelector("#hourly-forecast-display");
-  forecastDisplay.innerHTML = null;
-  for (let index = 0; index < 6; index++) {
-    forecast = response.data.list[index];
-    forecastDisplay.innerHTML += ` <div class="card col-sm-2"><h4>${formatDate(
-      forecast.dt * 1000
-    )}</h4> <img class= "card-img" src="https://openweathermap.org/img/wn/${
-      forecast.weather[0].icon
-    }@2x.png" alt=${forecast.description}/><h6>${Math.round(
-      forecast.main.temp
-    )}°</h6></div>`;
-  }
-}
-
+//Weather display functions
 function showTemp(response) {
   let currentTemp = Math.round(response.data.main.temp);
   celsiusTemperature = Math.round(response.data.main.temp);
@@ -116,6 +99,22 @@ function showTemp(response) {
     `http://openweathermap.org/img/wn/${response.data.weather[0].icon}@2x.png`
   );
   iconDisplay.setAttribute("alt", response.data.weather[0].description);
+}
+
+function displayForecast(response) {
+  let forecast = null;
+  let forecastDisplay = document.querySelector("#hourly-forecast-display");
+  forecastDisplay.innerHTML = null;
+  for (let index = 0; index < 6; index++) {
+    forecast = response.data.list[index];
+    forecastDisplay.innerHTML += ` <div class="card col-sm-2"><h4>${formatDate(
+      forecast.dt * 1000
+    )}</h4> <img class= "card-img" src="https://openweathermap.org/img/wn/${
+      forecast.weather[0].icon
+    }@2x.png" alt=${forecast.description}/><h6>${Math.round(
+      forecast.main.temp
+    )}°C | ${Math.round((forecast.main.temp * 9) / 5 + 32)}°F</h6></div>`;
+  }
 }
 
 //Temperature conversion functions
