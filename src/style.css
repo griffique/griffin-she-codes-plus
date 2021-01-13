@@ -51,6 +51,9 @@ p {
   background-attachment: fixed;
   height: 100%;
 }
+.day h1 {
+  color: #03045e;
+}
 .day h2 {
   color: #90e0ef;
   font-size: 24px;
@@ -129,7 +132,9 @@ h2 {
 #hourly-forecast-display {
   text-align: center;
 }
-
+#hourly-forecast-display h4 {
+  color: #03045e;
+}
 /*Search area*/
 
 .btn-light:hover {
