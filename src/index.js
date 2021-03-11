@@ -90,7 +90,7 @@ function showTemp(response) {
   let currentTime = new Date(response.data.dt * 1000);
   let currentTimeDisplay = document.querySelector("#current-time");
   let formattedTime = formatDate(currentTime);
-  currentTimeDisplay.innerHTML = `Last updated ${formattedTime}`;
+  currentTimeDisplay.innerHTML = `Last updated at ${formattedTime}`;
   let iconDisplay = document.querySelector("#icon-element");
   iconDisplay.setAttribute(
     "src",
